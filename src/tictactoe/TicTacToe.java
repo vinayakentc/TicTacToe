@@ -46,6 +46,9 @@ public class TicTacToe {
 			System.out.println("/---|---|---\\");
 		}
 		
+		
+		//make a move to a desired location in the board
+		//check for free space before making desired move
 		public static String checkWinner() {
 			for (int a = 0; a < 8; a++)
 			{
