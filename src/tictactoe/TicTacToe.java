@@ -30,6 +30,8 @@ public class TicTacToe {
 		}
 		printBoard();
 		
+		//computer play as a user 
+		
 		while (winner == null)
 		{
 			int numInput;
