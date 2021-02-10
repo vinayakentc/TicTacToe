@@ -87,20 +87,16 @@ public class TicTacToe {
 		}
 	}
 
-	/**
-	  *Function to generate random player
-	  *@return random output to check which player plays first
-	  */
+	
+	// random player  random output to check which player plays first
+	  
 	public static int Toss() {
 		System.out.println("Toss to see who plays first!");
 		Random random = new Random();
 		return random.nextInt(2);
 	}
 
-	/**
-	  *Function to choose letter X or O
-	  *@return inputLetter in variable turn
-	  */
+	
 	public static String chooseLetter() {
 		System.out.println("Choose either X or O: ");
 		Scanner letter = new Scanner(System.in);
@@ -127,10 +123,7 @@ public class TicTacToe {
 		System.out.println("/---|---|---\\");
 	}
 
-	/**
-	  *Function checks for all winning possibilities and draw condition
-	  *@return null to change turn if there is no winning or draw match
-	  */
+	
 	public static String checkWinner() {
 		for (int a = 0; a < 8; a++)
 		{
@@ -186,7 +179,6 @@ public class TicTacToe {
 		return null;
 	}
 	
-	//This checks for every seeds which include all rows,columns and diagonals which includes all sides
 	public static void nextMove() {
 		for(int a = 0; a < 6; a++)
 		{
@@ -198,6 +190,10 @@ public class TicTacToe {
 			String line4 = board[0] + board[3] + board[6];
 			String line5 = board[1] + board[4] + board[7];
 			String line6 = board[2] + board[5] + board[8];
+			//Check for all seeds in diagonal
+			String line7 = board[0] + board[4] + board[8];
+			String line8 = board[2] + board[4] + board[6];
+			
 			switch(a)
 			{
 				case 0 :
@@ -260,6 +256,30 @@ public class TicTacToe {
 							System.out.println("Enter value: 9");
 						break;
 					}
+				case 6 :
+					{
+						if(line7.equals("1XX"))
+							System.out.println("Enter value: 1");
+						else if(line7.equals("XX9"))
+							System.out.println("Enter value: 9");
+						break;
+					}
+				case 7 :
+					{
+						if(line8.equals("3XX"))
+							System.out.println("Enter value: 3");
+						else if(line8.equals("XX7"))
+							System.out.println("Enter value: 7");
+						break;
+					}
+				case 8 :
+					{
+						if(line7.equals("X5X"))
+							System.out.println("Enter value: 5");
+						else if(line8.equals("X5X"))
+							System.out.println("Enter value: 5");
+						break;
+					}					
 			}
 		}
 	}
