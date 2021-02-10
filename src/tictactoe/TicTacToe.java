@@ -186,7 +186,7 @@ public class TicTacToe {
 		return null;
 	}
 	
-	
+	//This checks for every seeds which include all rows,columns and diagonals which includes all sides
 	public static void nextMove() {
 		for(int a = 0; a < 6; a++)
 		{
