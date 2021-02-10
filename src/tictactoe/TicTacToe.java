@@ -3,6 +3,7 @@ package tictactoe;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Random;
 
 public class TicTacToe {
 	static String[] board;
@@ -12,6 +13,16 @@ public class TicTacToe {
 	public static void main(String[] args) {
 		board = new String[9];
 		populateEmptyBoard();
+		int player = Toss();
+		//player checked 1-user, 0-computer
+		if(player == 1)
+		{
+			System.out.println("User plays first.");
+		}
+		if(player == 0)
+		{
+			System.out.println("Computer plays first.");
+		}
 	}
 
 	static void populateEmptyBoard() {
@@ -19,6 +30,13 @@ public class TicTacToe {
 			board[a] = String.valueOf(a+1);
 		}
 	}
+	
+	public static int Toss() {
+		System.out.println("Toss to see who plays first!");
+		Random random = new Random();
+		return random.nextInt(2);
+	}
+	
 	// player to choose letter X or O
 	public static String chooseLetter() {
 		System.out.println("Choose either X or O: ");
