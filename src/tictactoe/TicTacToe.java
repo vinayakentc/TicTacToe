@@ -18,7 +18,7 @@ public class TicTacToe {
 		populateEmptyBoard();
 
 		int player = Toss();
-		//player checked 1-user, 0-computer
+		
 		if(player == 1)
 		{
 			System.out.println("User plays first.");
@@ -180,7 +180,7 @@ public class TicTacToe {
 	}
 	
 	public static void nextMove() {
-		for(int a = 0; a < 6; a++)
+		for(int a = 0; a < 9; a++)
 		{
 			//Checks for all seeds in row
 			String line1 = board[0] + board[1] + board[2];
